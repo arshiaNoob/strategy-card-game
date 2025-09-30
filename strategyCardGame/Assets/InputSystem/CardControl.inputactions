@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "CardControl",
+    "maps": [
+        {
+            "name": "Card",
+            "id": "0f3b356c-9d6d-48ac-8457-675b0676f218",
+            "actions": [
+                {
+                    "name": "MouseDown",
+                    "type": "Button",
+                    "id": "56fa299b-ab9a-435a-8e7a-efecab6dab0b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseDrag",
+                    "type": "Button",
+                    "id": "589bcfed-e5b6-45eb-8232-ce8ba7345be1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f014c05d-6f7c-4592-b6b0-bb8a2a3c02d1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "480fa47c-f1f8-4e75-bea5-d47869de767a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseDrag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
