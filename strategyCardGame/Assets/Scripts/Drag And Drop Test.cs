@@ -22,14 +22,15 @@ public class DragAndDropTest : MonoBehaviour
 
     void OnMouseDrag()
     {
+
         Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = transform.position.z;
         this.transform.position = mouseWorld + offset;
 
-        if (true)
-        {
-            Invoke("CardHandeler", 1);
-        }
+        // if (true)
+        // {
+        //     Invoke("CardHandeler", 1);
+        // }
 
     }
 
