@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 373217df25a6448728e47f7324f8d0db
+guid: 095d92e3e0d2323408af207456e746ca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5763608723992682330
-    second: game scene border_0
+      213: -1376553367204588560
+    second: card border 1_0
+  - first:
+      213: 5690300121756746282
+    second: card border 1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: game scene border_0
+      name: card border 1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 71
         y: 0
-        width: 3500
-        height: 537
+        width: 1920
+        height: 2699
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a0e216076c8300b0800000000000000
-      internalID: -5763608723992682330
+      spriteID: 0f3176d710085ece0800000000000000
+      internalID: -1376553367204588560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card border 1_1
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 299
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a224caeefc108fe40800000000000000
+      internalID: 5690300121756746282
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      game scene border_0: -5763608723992682330
+      card border 1_0: -1376553367204588560
+      card border 1_1: 5690300121756746282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
