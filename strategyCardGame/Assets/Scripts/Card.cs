@@ -26,15 +26,10 @@ public class Card : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Hit");
         if (!other.CompareTag(ENEMY_STRING)) return;
         DamageHandeller();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
 
     private void DamageHandeller()
     {
