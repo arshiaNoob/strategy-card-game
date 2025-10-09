@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class CardSelect : MonoBehaviour
     private Vector3 defaultPostion;
     private Vector3 originalScale;
     private static CardSelect cardSelect;
+    SlotsCheck slotsCheck;
+
+
 
     void Start()
     {
