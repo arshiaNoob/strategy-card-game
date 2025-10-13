@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CardDeckController : MonoBehaviour
 {
-    List<GameObject> cardsInDeckList = new List<GameObject>();
     public List<GameObject> cardsInSlotList = new List<GameObject>();
     // adding card like this just for test*
     [SerializeField] private GameObject cardPrefab;
@@ -15,12 +14,6 @@ public class CardDeckController : MonoBehaviour
 
     void Start()
     {
-        // adding cards to deck list just for test*
-        for (int i = 0; i < 10; i++)
-        {
-            cardsInDeckList.Add(cardPrefab);
-        }
-
         ShowCardsInDeckSlot();
     }
     

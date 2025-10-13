@@ -141,8 +141,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 66fc92a6052e86e84aad379b47fca2b4, type: 2}
   - {fileID: 11400000, guid: 404c0872775f5c1b3bb820c65a6222fe, type: 2}
   - {fileID: 11400000, guid: 9a362409681eac4ffbe2a433cbb9be1b, type: 2}
+  - {fileID: 11400000, guid: 81d1cf3d85e449c44bf486c06b83c367, type: 2}
   damageText: {fileID: 8782712095566642740}
   healthText: {fileID: 2742472214133634783}
+  currentCard: {fileID: 0}
 --- !u!1 &1657832999373972109
 GameObject:
   m_ObjectHideFlags: 0

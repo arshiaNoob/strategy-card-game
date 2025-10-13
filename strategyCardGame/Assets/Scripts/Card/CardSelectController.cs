@@ -34,10 +34,22 @@ public class CardSelectController : MonoBehaviour
     
     public void PlaseCard(Transform borderPos, int borderNum)
     {
+        // make card smaller(it's original size)
+        selectedCard.GetComponent<CardClick>().Hidehighlight();
+
+        int cardManaAmount = selectedCard.GetComponent<CardStatus>().currentCard.Mana;
+        int playerCurrentManaAmount = ManaManager.instance.currentManaAmount;
+        // check if player have neede amount of mana to plase this card
+        if (playerCurrentManaAmount - cardManaAmount < 0)
+        {
+            print("player dont have mana to plase this card");
+            return;
+        }
+        // decrease player mana amount
+        ManaManager.instance.DecreaseManaAmount(cardManaAmount);
         // plase card in this pos (change its position)
         selectedCard.transform.position = borderPos.position;
         selectedCard.GetComponent<CardClick>().cardHasBeenPlased = true;
-        selectedCard.GetComponent<CardClick>().Hidehighlight();
         // hide all borders 
         GroundSlotController.instance.HideAllSlots();
         // set this slot is full in list

@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1cc0ef9fc90b249997aed20fe6f0ae, type: 3}
-  m_Name: card1 2
+  m_Name: card 3
   m_EditorClassIdentifier: 
   Health: 1
   Dmage: 1
+  Mana: 1
