@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 517650980144581698}
   - component: {fileID: 6437335873034074817}
   - component: {fileID: -1752030582999472418}
+  - component: {fileID: 8894943502259025604}
   m_Layer: 3
   m_Name: Card
   m_TagString: Card
@@ -124,6 +125,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnemyCard: 0
   cardHasBeenPlased: 0
+--- !u!114 &8894943502259025604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322289143989802448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175823345c31077e8b7be955bb83f057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starterCards:
+  - {fileID: 11400000, guid: 66fc92a6052e86e84aad379b47fca2b4, type: 2}
+  - {fileID: 11400000, guid: 404c0872775f5c1b3bb820c65a6222fe, type: 2}
+  - {fileID: 11400000, guid: 9a362409681eac4ffbe2a433cbb9be1b, type: 2}
+  damageText: {fileID: 8782712095566642740}
+  healthText: {fileID: 2742472214133634783}
 --- !u!1 &1657832999373972109
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,8 +359,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27
-  m_fontSizeBase: 27
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -356,7 +375,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
