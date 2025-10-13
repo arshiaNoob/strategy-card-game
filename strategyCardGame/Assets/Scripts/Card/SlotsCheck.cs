@@ -1,67 +1,45 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SlotsCheck : MonoBehaviour
 {
-
-    [SerializeField] private string tagToFind = "Card";
-
-    [SerializeField] GameObject borderForPutCard;
-    [SerializeField] private bool includeDescendants = true;
-
-
-    [ContextMenu("Check Children For Tag")]
-
-
+    public List<GameObject> cardSlots = new List<GameObject>();
+    public List<GameObject> border = new List<GameObject>();
+    
+    [SerializeField] GameObject cardPrefab;
+    [SerializeField] GameObject borderForCard;
+    
+    CardSelect cardSelect;
+    
     void Awake()
     {
-        borderForPutCard.SetActive(false);
+        this.enabled = false;
     }
 
-    public void CheckAndAct()
+    void OnEnable()
     {
-        bool found = includeDescendants
-            ? HasChildWithTagRecursive(transform, tagToFind)
-            : HasDirectChildWithTag(transform, tagToFind);
+        //deleting border for clearing
+        //TODO:delet border of that slot when card is on it
+        border.ForEach(Destroy);
+        border.Clear();
 
-        if (!found)
+        cardSelect = FindAnyObjectByType<CardSelect>();
+
+
+        if (cardSelect == null) return;
+
+        //check for slots child
+        if (!cardPrefab.transform.IsChildOf(this.transform))
         {
-            PutCard();
+            foreach (GameObject cardSlot in cardSlots)
+            {
+                border.Add(Instantiate(borderForCard, cardSlot.transform.position, Quaternion.identity));
+                Debug.Log(border.Count);
+            }
         }
-    }
-
-    
-    void Start()
-    {
-        CheckAndAct();
-    }
-
-    private bool HasDirectChildWithTag(Transform parent, string tagName)
-    {
-        foreach (Transform child in parent)
+        else
         {
-            
-            if (child.CompareTag(tagName))
-                return true;
+            this.enabled = false;
         }
-        return false;
-    }
-
-    private bool HasChildWithTagRecursive(Transform parent, string tagName)
-    {
-        foreach (Transform child in parent)
-        {
-            if (child.CompareTag(tagName))
-                return true;
-
-            if (HasChildWithTagRecursive(child, tagName))
-                return true;
-        }
-        return false;
-    }
-
-   
-    private void PutCard()
-    {
-        borderForPutCard.SetActive(true);
     }
 }

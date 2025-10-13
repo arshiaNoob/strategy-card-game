@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CardSelect : MonoBehaviour
 {
@@ -8,10 +10,14 @@ public class CardSelect : MonoBehaviour
     private Vector3 originalScale;
     private static CardSelect cardSelect;
 
+
+    SlotsCheck slotsCheck;
+
     void Start()
     {
         originalScale = transform.localScale;
         defaultPostion = transform.position;
+        slotsCheck = FindAnyObjectByType<SlotsCheck>();
     }
 
     void OnMouseDown()
@@ -37,6 +43,8 @@ public class CardSelect : MonoBehaviour
     {
         transform.localScale = originalScale * 1.1f; // بزرگ‌تر شدن
         cardSelect = this;
+        slotsCheck.enabled = true;
+        
     }
 
     void Deselect()
@@ -44,6 +52,9 @@ public class CardSelect : MonoBehaviour
         transform.localScale = originalScale; // برگرد به حالت عادی
         transform.position = defaultPostion;
         if (cardSelect == this)
+        {
             cardSelect = null;
+            slotsCheck.enabled = false;
+        }
     }
 }
