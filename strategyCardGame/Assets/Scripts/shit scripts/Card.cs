@@ -8,7 +8,6 @@ public class Card : MonoBehaviour
     [SerializeField] TMP_Text healthText;
     [SerializeField] CardSO StarterCard;
 
-
     CardSO currentCard;
 
     const String ENEMY_STRING = "Card";

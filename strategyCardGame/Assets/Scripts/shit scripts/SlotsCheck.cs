@@ -19,7 +19,7 @@ public class SlotsCheck : MonoBehaviour
     void OnEnable()
     {
         //deleting border for clearing
-        //TODO:delet border of that slot when card is on it
+        //TODO: delet border of that slot when card is on it
         border.ForEach(Destroy);
         border.Clear();
 

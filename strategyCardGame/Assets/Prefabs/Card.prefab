@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7741759681256775071}
   - component: {fileID: 517650980144581698}
   - component: {fileID: 6437335873034074817}
-  - component: {fileID: 357817466351036581}
+  - component: {fileID: -1752030582999472418}
   m_Layer: 3
   m_Name: Card
   m_TagString: Card
@@ -110,7 +110,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &357817466351036581
+--- !u!114 &-1752030582999472418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 322289143989802448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9c169f433523a648d5dffdbe22db22, type: 3}
+  m_Script: {fileID: 11500000, guid: 52e51bdf70156d745b01fe826a5f3280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectBorder: {fileID: 0}
+  isEnemyCard: 0
+  cardHasBeenPlased: 0
 --- !u!1 &1657832999373972109
 GameObject:
   m_ObjectHideFlags: 0

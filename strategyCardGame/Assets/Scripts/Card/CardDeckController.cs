@@ -1,14 +1,17 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class CardDeckController : MonoBehaviour
 {
     List<GameObject> cardsInDeckList = new List<GameObject>();
-    List<GameObject> cardsInSlotList = new List<GameObject>();
+    public List<GameObject> cardsInSlotList = new List<GameObject>();
     // adding card like this just for test*
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private Transform[] cardSlotInDeckPos;
+
+    // singleton
+    public static CardDeckController instance;
+    void Awake() { instance = this; }
 
     void Start()
     {
