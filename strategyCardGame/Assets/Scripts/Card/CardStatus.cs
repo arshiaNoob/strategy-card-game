@@ -21,7 +21,12 @@ public class CardStatus : MonoBehaviour
 
         currentCard = starterCards[cardnumber];
 
+        starterCards.RemoveAt(cardnumber);
+
         healthText.text = currentCard.Health.ToString();
         damageText.text = currentCard.Dmage.ToString();
+
+
+        Debug.Log(starterCards.Count);
     }
 }
