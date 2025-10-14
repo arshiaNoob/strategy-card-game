@@ -22,37 +22,51 @@ public class CardSelectController : MonoBehaviour
 
         if (cardClickComponent.cardHasBeenPlased)
         {
-            // TODO: show red border around enemy cards
             print("you selected an plased card");
+            // TODO: show red border around enemy cards
+            // bug fix: hide ground slot borders
+            GroundSlotController.instance.HideAllSlots();
         }
         else
         {
             // show available slots in ground to plase this card
-            GroundSlotController.instance.ShowAvailableSlots();
+            if (PlayerHaveNeededManaAmount())
+                GroundSlotController.instance.ShowAvailableSlots();
+            // don't show slots if player dont have needed amount of mana
+            else GroundSlotController.instance.HideAllSlots();
         }
     }
-    
+
     public void PlaseCard(Transform borderPos, int borderNum)
     {
         // make card smaller(it's original size)
         selectedCard.GetComponent<CardClick>().Hidehighlight();
 
-        int cardManaAmount = selectedCard.GetComponent<CardStatus>().currentCard.Mana;
-        int playerCurrentManaAmount = ManaManager.instance.currentManaAmount;
-        // check if player have neede amount of mana to plase this card
-        if (playerCurrentManaAmount - cardManaAmount < 0)
-        {
-            print("player dont have mana to plase this card");
-            return;
-        }
+        if (!PlayerHaveNeededManaAmount()) return;
         // decrease player mana amount
+        int cardManaAmount = selectedCard.GetComponent<CardStatus>().currentCard.Mana;
         ManaManager.instance.DecreaseManaAmount(cardManaAmount);
         // plase card in this pos (change its position)
         selectedCard.transform.position = borderPos.position;
         selectedCard.GetComponent<CardClick>().cardHasBeenPlased = true;
+        // hide card mana border
+        selectedCard.GetComponent<CardStatus>().CardManaBorder.SetActive(false);
         // hide all borders 
         GroundSlotController.instance.HideAllSlots();
         // set this slot is full in list
         GroundSlotController.instance.SetSlotIsFull(borderNum);
+    }
+    
+    private bool PlayerHaveNeededManaAmount()
+    {
+        int cardManaAmount = selectedCard.GetComponent<CardStatus>().currentCard.Mana;
+        int playerCurrentManaAmount = ManaManager.instance.currentManaAmount;
+        // check if player have needed amount of mana to plase this card
+        if (playerCurrentManaAmount - cardManaAmount < 0)
+        {
+            print("player dont have mana to plase this card");
+            return false;
+        }
+        return true;
     }
 }

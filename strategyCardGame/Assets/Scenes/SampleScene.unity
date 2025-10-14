@@ -796,8 +796,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278453412
-  m_fontColor: {r: 0.6415094, g: 0.015129937, b: 0.015129937, a: 1}
+    rgba: 4280222884
+  m_fontColor: {r: 0.6431373, g: 0.01568626, b: 0.12156863, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1015,7 +1015,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!224 &806501259
 RectTransform:
@@ -1862,8 +1862,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278453412
-  m_fontColor: {r: 0.6415094, g: 0.015129937, b: 0.015129937, a: 1}
+    rgba: 4280222884
+  m_fontColor: {r: 0.6431373, g: 0.01568626, b: 0.12156863, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2016,6 +2016,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsInSlotList: []
+  CardsInDeckList:
+  - {fileID: 11400000, guid: 66fc92a6052e86e84aad379b47fca2b4, type: 2}
+  - {fileID: 11400000, guid: 404c0872775f5c1b3bb820c65a6222fe, type: 2}
+  - {fileID: 11400000, guid: 9a362409681eac4ffbe2a433cbb9be1b, type: 2}
+  - {fileID: 11400000, guid: 81d1cf3d85e449c44bf486c06b83c367, type: 2}
+  - {fileID: 11400000, guid: f6a54c4622096165ea7de0cb17dd3ead, type: 2}
+  - {fileID: 11400000, guid: f88f565b6342dab5c830d9e8b5bebd6e, type: 2}
+  - {fileID: 11400000, guid: b22535a4dfab2f09d9efdb80fdf51a8e, type: 2}
+  - {fileID: 11400000, guid: 4dee42ec8b3cd45fbb708a83c3f7b6d2, type: 2}
+  - {fileID: 11400000, guid: 5df93f53c89f8f539b46e8431776a6c6, type: 2}
+  - {fileID: 11400000, guid: 838acaa67ca8db334bd5f5c10182f67b, type: 2}
   cardPrefab: {fileID: 322289143989802448, guid: f6455711b6cba5e27a545190fa2b2f19, type: 3}
   cardSlotInDeckPos:
   - {fileID: 48416201}

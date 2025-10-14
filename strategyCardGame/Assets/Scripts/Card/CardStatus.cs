@@ -1,32 +1,28 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class CardStatus : MonoBehaviour
 {
-    public List<CardSO> starterCards = new List<CardSO>();
+    /* 
+        moved this code:
+            public List<CardSO> CardsInDeckList = new List<CardSO>();
+        to this 'CardDeckController' file for more controll,
+        and culling AddStatus func in CardDeckController
+        to set card status and more controll.
+        delete this comment after reading it :)
+    */
     [SerializeField] TMP_Text damageText;
     [SerializeField] TMP_Text healthText;
+    [SerializeField] TMP_Text manaText;
+    [SerializeField] public GameObject CardManaBorder;
 
     public CardSO currentCard;
-    
-    void Start()
+
+    public void AddStatus(CardSO card)
     {
-        AddStatus();
-    }
-
-    private void AddStatus()
-    {
-        int cardnumber = Random.Range(0, starterCards.Count);
-
-        currentCard = starterCards[cardnumber];
-
-        starterCards.RemoveAt(cardnumber);
-
-        healthText.text = currentCard.Health.ToString();
-        damageText.text = currentCard.Dmage.ToString();
-
-
-        Debug.Log(starterCards.Count);
+        currentCard = card;
+        healthText.text = card.Health.ToString();
+        damageText.text = card.Dmage.ToString();
+        manaText.text = card.Mana.ToString();
     }
 }
