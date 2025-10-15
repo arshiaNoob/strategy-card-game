@@ -11,6 +11,8 @@ public class CardSelectController : MonoBehaviour
 
     public void Select(GameObject cardObj)
     {
+        if (!TurnManager.instance.canPlayerMove) return;
+
         // make last selected card smaller
         if (selectedCard)
             selectedCard.GetComponent<CardClick>().Hidehighlight();
@@ -39,8 +41,7 @@ public class CardSelectController : MonoBehaviour
 
     public void PlaseCard(Transform borderPos, int borderNum)
     {
-        // make card smaller(it's original size)
-        selectedCard.GetComponent<CardClick>().Hidehighlight();
+        if (!TurnManager.instance.canPlayerMove) return;
 
         if (!PlayerHaveNeededManaAmount()) return;
         // decrease player mana amount
@@ -51,12 +52,12 @@ public class CardSelectController : MonoBehaviour
         selectedCard.GetComponent<CardClick>().cardHasBeenPlased = true;
         // hide card mana border
         selectedCard.GetComponent<CardStatus>().CardManaBorder.SetActive(false);
-        // hide all borders 
-        GroundSlotController.instance.HideAllSlots();
         // set this slot is full in list
         GroundSlotController.instance.SetSlotIsFull(borderNum);
+
+        DeselectCard();
     }
-    
+
     private bool PlayerHaveNeededManaAmount()
     {
         int cardManaAmount = selectedCard.GetComponent<CardStatus>().currentCard.Mana;
@@ -68,5 +69,15 @@ public class CardSelectController : MonoBehaviour
             return false;
         }
         return true;
+    }
+    
+    public void DeselectCard()
+    {
+        // hide all borders 
+        GroundSlotController.instance.HideAllSlots();
+        // make card smaller(it's original size)
+        if(selectedCard)
+        selectedCard.GetComponent<CardClick>().Hidehighlight();
+        selectedCard = null;
     }
 }
